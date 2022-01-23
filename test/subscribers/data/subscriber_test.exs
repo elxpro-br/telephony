@@ -7,13 +7,14 @@ defmodule Subscribers.Data.SubscriberTest do
     payload = %{document_id: "123", first_name: "123", phone_number: "123"}
 
     # When
-    result = Subscriber.new(payload)
+    result = Subscriber.new(payload, :prepaid)
 
     # Then
     assert %Subscribers.Data.Subscriber{
              document_id: "123",
              first_name: "123",
-             phone_number: "123"
+             phone_number: "123",
+             plan: :prepaid
            } == result
   end
 end
